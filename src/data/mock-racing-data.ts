@@ -158,68 +158,150 @@ export const mockRaceParticipants: RaceParticipant[] = [
 ];
 
 // Featured races at Goulburn Greyhound Racing Club
+// Friday, December 5th, 2025 - Evening Meeting
 export const mockRaces: Race[] = [
   {
-    id: 'goulburn-r3',
-    raceNumber: 3,
+    id: 'goulburn-dec5-r1',
+    raceNumber: 1,
     trackName: "Goulburn",
-    distance: 500,
-    postTime: new Date(Date.now() + 45 * 60 * 1000).toISOString(), // 45 minutes from now
+    distance: 520,
+    grade: "Grade 5",
+    prizeMoney: "$3,200",
+    postTime: new Date('2025-12-05T19:30:00+11:00').toISOString(),
     status: 'upcoming',
-    participants: mockRaceParticipants,
-    trifectaPool: 2847,
-    conditions: "Good track, clear evening"
+    participants: mockRaceParticipants.slice(0, 8),
+    trifectaPool: 2450,
+    conditions: "Good track, clear evening, fast conditions"
   },
   {
-    id: 'goulburn-r4',
-    raceNumber: 4,
-    trackName: "Goulburn",
-    distance: 500,
-    postTime: new Date(Date.now() + 65 * 60 * 1000).toISOString(),
-    status: 'upcoming',
-    participants: mockRaceParticipants.map(p => ({ ...p, odds: "3/1", decimalOdds: 4.0 })),
-    trifectaPool: 1950
-  },
-  {
-    id: 'goulburn-r2',
+    id: 'goulburn-dec5-r2',
     raceNumber: 2,
     trackName: "Goulburn",
-    distance: 480,
-    postTime: new Date(Date.now() + 25 * 60 * 1000).toISOString(),
+    distance: 520,
+    grade: "Grade 4/5",
+    prizeMoney: "$3,500",
+    postTime: new Date('2025-12-05T19:50:00+11:00').toISOString(),
     status: 'upcoming',
-    participants: mockRaceParticipants.slice(0, 5),
-    trifectaPool: 1723
+    participants: mockRaceParticipants.map(p => ({ ...p, odds: "5/2", decimalOdds: 3.5 })).slice(0, 8),
+    trifectaPool: 2875
   },
   {
-    id: 'goulburn-r5',
+    id: 'goulburn-dec5-r3',
+    raceNumber: 3,
+    trackName: "Goulburn",
+    distance: 350,
+    grade: "Mixed 4/5",
+    prizeMoney: "$3,200",
+    postTime: new Date('2025-12-05T20:10:00+11:00').toISOString(),
+    status: 'upcoming',
+    participants: mockRaceParticipants.slice(0, 7),
+    trifectaPool: 2210
+  },
+  {
+    id: 'goulburn-dec5-r4',
+    raceNumber: 4,
+    trackName: "Goulburn",
+    distance: 520,
+    grade: "Grade 5",
+    prizeMoney: "$3,200",
+    postTime: new Date('2025-12-05T20:30:00+11:00').toISOString(),
+    status: 'upcoming',
+    participants: mockRaceParticipants.slice(0, 8),
+    trifectaPool: 2560
+  },
+  {
+    id: 'goulburn-dec5-r5',
     raceNumber: 5,
     trackName: "Goulburn",
-    distance: 525,
-    postTime: new Date(Date.now() + 90 * 60 * 1000).toISOString(),
+    distance: 520,
+    grade: "Grade 4",
+    prizeMoney: "$3,800",
+    postTime: new Date('2025-12-05T20:50:00+11:00').toISOString(),
     status: 'upcoming',
     participants: mockRaceParticipants,
-    trifectaPool: 3120
+    trifectaPool: 3340
+  },
+  {
+    id: 'goulburn-dec5-r6',
+    raceNumber: 6,
+    trackName: "Goulburn",
+    distance: 350,
+    grade: "Grade 5",
+    prizeMoney: "$3,200",
+    postTime: new Date('2025-12-05T21:10:00+11:00').toISOString(),
+    status: 'upcoming',
+    participants: mockRaceParticipants.slice(0, 8),
+    trifectaPool: 2680
+  },
+  {
+    id: 'goulburn-dec5-r7',
+    raceNumber: 7,
+    trackName: "Goulburn",
+    distance: 520,
+    grade: "Grade 3/4",
+    prizeMoney: "$4,200",
+    postTime: new Date('2025-12-05T21:30:00+11:00').toISOString(),
+    status: 'upcoming',
+    participants: mockRaceParticipants,
+    trifectaPool: 3920
+  },
+  {
+    id: 'goulburn-dec5-r8',
+    raceNumber: 8,
+    trackName: "Goulburn",
+    distance: 520,
+    grade: "Grade 5",
+    prizeMoney: "$3,200",
+    postTime: new Date('2025-12-05T21:50:00+11:00').toISOString(),
+    status: 'upcoming',
+    participants: mockRaceParticipants.slice(0, 7),
+    trifectaPool: 2490
+  },
+  {
+    id: 'goulburn-dec5-r9',
+    raceNumber: 9,
+    trackName: "Goulburn",
+    distance: 350,
+    grade: "Grade 4/5",
+    prizeMoney: "$3,500",
+    postTime: new Date('2025-12-05T22:10:00+11:00').toISOString(),
+    status: 'upcoming',
+    participants: mockRaceParticipants.slice(0, 8),
+    trifectaPool: 2785
+  },
+  {
+    id: 'goulburn-dec5-r10',
+    raceNumber: 10,
+    trackName: "Goulburn",
+    distance: 520,
+    grade: "Grade 4",
+    prizeMoney: "$3,800",
+    postTime: new Date('2025-12-05T22:30:00+11:00').toISOString(),
+    status: 'upcoming',
+    participants: mockRaceParticipants,
+    trifectaPool: 3180
   }
 ];
 
 // Goulburn Greyhound Racing Club track information
+// Updated for December 5th, 2025 Evening Meeting
 export const mockTracks: Track[] = [
   {
     id: 'goulburn',
     name: "Goulburn Greyhound Racing Club",
     location: "Braidwood Road, Goulburn, NSW 2580, Australia",
     surfaceType: 'grass',
-    distanceOptions: [380, 450, 500, 640],
+    distanceOptions: [350, 520],
     capacity: 3500,
-    facilities: ["Restaurant", "Bar", "Betting Facilities", "Private Boxes", "TAB", "Function Rooms"],
+    facilities: ["Restaurant", "Bar", "Betting Facilities", "Private Boxes", "TAB", "Function Rooms", "Parking"],
     weatherCondition: "Clear",
     trackCondition: 'fast',
     upcomingRaces: mockRaces.filter(r => r.trackName === "Goulburn"),
     schedule: [
-      { day: "Monday", startTime: "19:30", numberOfRaces: 12 },
-      { day: "Wednesday", startTime: "19:30", numberOfRaces: 12 },
-      { day: "Friday", startTime: "19:30", numberOfRaces: 14, eventType: "Evening Meeting" },
-      { day: "Saturday", startTime: "14:00", numberOfRaces: 16, eventType: "Featured Card" }
+      { day: "Monday", startTime: "19:30", numberOfRaces: 10 },
+      { day: "Wednesday", startTime: "19:30", numberOfRaces: 10 },
+      { day: "Friday", startTime: "19:30", numberOfRaces: 10, eventType: "Evening Meeting" },
+      { day: "Saturday", startTime: "14:00", numberOfRaces: 12, eventType: "Weekend Feature" }
     ]
   }
 ];
@@ -232,12 +314,16 @@ export const mockLiveRaceUpdates = {
 };
 
 // Today's schedule at Goulburn Greyhound Racing Club
+// Friday, December 5th, 2025 - Evening Meeting
 export const todaysSchedule = [
-  { time: "14:15", track: "Goulburn", race: 1, distance: 480, status: "completed" },
-  { time: "14:30", track: "Goulburn", race: 2, distance: 480, status: "upcoming" },
-  { time: "19:30", track: "Goulburn", race: 3, distance: 500, status: "upcoming" },
-  { time: "19:50", track: "Goulburn", race: 4, distance: 500, status: "upcoming" },
-  { time: "20:00", track: "Goulburn", race: 5, distance: 525, status: "upcoming" },
-  { time: "20:10", track: "Goulburn", race: 6, distance: 500, status: "upcoming" },
-  { time: "20:20", track: "Goulburn", race: 7, distance: 525, status: "upcoming" }
+  { time: "19:30", track: "Goulburn", race: 1, distance: 520, grade: "Grade 5", prizeMoney: "$3,200", runners: 8, status: "upcoming" },
+  { time: "19:50", track: "Goulburn", race: 2, distance: 520, grade: "Grade 4/5", prizeMoney: "$3,500", runners: 8, status: "upcoming" },
+  { time: "20:10", track: "Goulburn", race: 3, distance: 350, grade: "Mixed 4/5", prizeMoney: "$3,200", runners: 7, status: "upcoming" },
+  { time: "20:30", track: "Goulburn", race: 4, distance: 520, grade: "Grade 5", prizeMoney: "$3,200", runners: 8, status: "upcoming" },
+  { time: "20:50", track: "Goulburn", race: 5, distance: 520, grade: "Grade 4", prizeMoney: "$3,800", runners: 8, status: "upcoming" },
+  { time: "21:10", track: "Goulburn", race: 6, distance: 350, grade: "Grade 5", prizeMoney: "$3,200", runners: 8, status: "upcoming" },
+  { time: "21:30", track: "Goulburn", race: 7, distance: 520, grade: "Grade 3/4", prizeMoney: "$4,200", runners: 8, status: "upcoming" },
+  { time: "21:50", track: "Goulburn", race: 8, distance: 520, grade: "Grade 5", prizeMoney: "$3,200", runners: 7, status: "upcoming" },
+  { time: "22:10", track: "Goulburn", race: 9, distance: 350, grade: "Grade 4/5", prizeMoney: "$3,500", runners: 8, status: "upcoming" },
+  { time: "22:30", track: "Goulburn", race: 10, distance: 520, grade: "Grade 4", prizeMoney: "$3,800", runners: 8, status: "upcoming" }
 ];

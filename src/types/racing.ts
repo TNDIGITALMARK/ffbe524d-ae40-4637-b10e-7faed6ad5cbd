@@ -24,6 +24,8 @@ export interface Race {
   raceNumber: number;
   trackName: string;
   distance: number; // in meters
+  grade?: string; // e.g., "Grade 5", "Grade 4/5"
+  prizeMoney?: string; // e.g., "$3,200"
   postTime: string; // ISO date string
   status: 'upcoming' | 'live' | 'completed';
   participants: RaceParticipant[];

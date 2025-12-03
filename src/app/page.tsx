@@ -98,8 +98,13 @@ export default function HomePage() {
                             Race {race.raceNumber} - {race.trackName}
                           </h4>
                           <p className="text-sm text-[hsl(var(--muted-foreground))]">
-                            {race.distance}m • {new Date(race.postTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                            {race.distance}m • {race.grade} • {new Date(race.postTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                           </p>
+                          {race.prizeMoney && (
+                            <p className="text-xs text-[hsl(var(--racing-gold))] font-semibold mt-1">
+                              Prize: {race.prizeMoney}
+                            </p>
+                          )}
                         </div>
                         <span className="text-xs bg-[hsl(var(--racing-green))] text-white px-3 py-1 rounded-full font-semibold uppercase">
                           {race.status}
@@ -159,27 +164,32 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            {/* Today's Schedule */}
+            {/* Today's Schedule - Friday December 5th, 2025 */}
             <Card className="bg-white shadow-md border-[hsl(var(--border))]">
               <CardHeader>
                 <CardTitle className="text-base font-bold text-[hsl(var(--foreground))] uppercase">
-                  Today's Schedule at Goulburn
+                  Friday, December 5th 2025 - Evening Meeting
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  {todaysSchedule.slice(0, 5).map((race, idx) => (
-                    <div key={idx} className="flex items-center justify-between py-2 border-b border-[hsl(var(--border))] last:border-0">
+                  {todaysSchedule.map((race, idx) => (
+                    <div key={idx} className="flex items-center justify-between py-3 border-b border-[hsl(var(--border))] last:border-0">
                       <div className="flex items-center gap-3">
-                        <Clock className="w-4 h-4 text-[hsl(var(--racing-gold))]" />
+                        <Clock className="w-5 h-5 text-[hsl(var(--racing-gold))]" />
                         <div>
-                          <div className="font-semibold text-[hsl(var(--foreground))]">{race.track}</div>
-                          <div className="text-xs text-[hsl(var(--muted-foreground))]">Race {race.race} • {race.distance}m</div>
+                          <div className="font-bold text-[hsl(var(--foreground))]">Race {race.race}</div>
+                          <div className="text-xs text-[hsl(var(--muted-foreground))]">
+                            {race.distance}m • {race.grade}
+                          </div>
+                          <div className="text-xs text-[hsl(var(--racing-gold))] font-semibold">
+                            {race.prizeMoney} • {race.runners} runners
+                          </div>
                         </div>
                       </div>
                       <div className="text-right">
-                        <div className="font-bold text-[hsl(var(--foreground))]">{race.time}</div>
-                        <div className={`text-xs font-semibold ${race.status === 'completed' ? 'text-[hsl(var(--muted-foreground))]' : 'text-[hsl(var(--racing-green))]'}`}>
+                        <div className="font-bold text-[hsl(var(--foreground))] text-lg">{race.time}</div>
+                        <div className={`text-xs font-semibold uppercase ${race.status === 'completed' ? 'text-[hsl(var(--muted-foreground))]' : 'text-[hsl(var(--racing-green))]'}`}>
                           {race.status}
                         </div>
                       </div>
