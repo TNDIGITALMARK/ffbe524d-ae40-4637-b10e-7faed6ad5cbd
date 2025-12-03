@@ -21,10 +21,10 @@ export default function TracksPage() {
       <section className="bg-[hsl(var(--racing-navy))] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 uppercase">
-            Track <span className="text-[hsl(var(--racing-gold))]">Information Hub</span>
+            Goulburn Racing <span className="text-[hsl(var(--racing-gold))]">Schedule</span>
           </h1>
           <p className="text-lg text-gray-200 max-w-2xl">
-            Explore participating racing tracks with schedules, track conditions, facility information, and historical data.
+            Complete schedule, track conditions, and facility information for Goulburn Greyhound Racing Club, NSW Australia.
           </p>
         </div>
       </section>

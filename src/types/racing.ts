@@ -1,6 +1,6 @@
 // ============================================
-// GREYHOUND RACING TYPE DEFINITIONS
-// Core data structures for the racing platform
+// GOULBURN GREYHOUND RACING CLUB - TYPE DEFINITIONS
+// Core data structures for Goulburn racing platform
 // ============================================
 
 export interface Greyhound {
@@ -12,7 +12,7 @@ export interface Greyhound {
   careerStarts: number;
   bestTime: number; // in seconds
   recentForm: string; // e.g., "2-1-3-1-2"
-  earnings: number; // in pounds
+  earnings: number; // in AUD
   photo?: string;
   weight: number; // in kg
   color: string;

@@ -1,11 +1,11 @@
 // ============================================
-// MOCK RACING DATA
-// Sample data matching the specification
+// GOULBURN GREYHOUND RACING CLUB - RACING DATA
+// Data for Goulburn track, NSW Australia
 // ============================================
 
 import { Greyhound, Race, Track, RaceParticipant } from '@/types/racing';
 
-// Featured Greyhounds from specification
+// Featured Greyhounds racing at Goulburn
 export const mockGreyhounds: Greyhound[] = [
   {
     id: '1',
@@ -93,7 +93,7 @@ export const mockGreyhounds: Greyhound[] = [
   }
 ];
 
-// Race 3 at Towcester from specification
+// Race participants at Goulburn Greyhound Racing Club
 export const mockRaceParticipants: RaceParticipant[] = [
   {
     greyhoundId: '3',
@@ -157,12 +157,12 @@ export const mockRaceParticipants: RaceParticipant[] = [
   }
 ];
 
-// Featured races from specification
+// Featured races at Goulburn Greyhound Racing Club
 export const mockRaces: Race[] = [
   {
-    id: 'towcester-r3',
+    id: 'goulburn-r3',
     raceNumber: 3,
-    trackName: "Towcester",
+    trackName: "Goulburn",
     distance: 500,
     postTime: new Date(Date.now() + 45 * 60 * 1000).toISOString(), // 45 minutes from now
     status: 'upcoming',
@@ -171,9 +171,9 @@ export const mockRaces: Race[] = [
     conditions: "Good track, clear evening"
   },
   {
-    id: 'towcester-r4',
+    id: 'goulburn-r4',
     raceNumber: 4,
-    trackName: "Towcester",
+    trackName: "Goulburn",
     distance: 500,
     postTime: new Date(Date.now() + 65 * 60 * 1000).toISOString(),
     status: 'upcoming',
@@ -181,9 +181,9 @@ export const mockRaces: Race[] = [
     trifectaPool: 1950
   },
   {
-    id: 'birmingham-r2',
+    id: 'goulburn-r2',
     raceNumber: 2,
-    trackName: "Birmingham",
+    trackName: "Goulburn",
     distance: 480,
     postTime: new Date(Date.now() + 25 * 60 * 1000).toISOString(),
     status: 'upcoming',
@@ -191,9 +191,9 @@ export const mockRaces: Race[] = [
     trifectaPool: 1723
   },
   {
-    id: 'romford-r5',
+    id: 'goulburn-r5',
     raceNumber: 5,
-    trackName: "Romford",
+    trackName: "Goulburn",
     distance: 525,
     postTime: new Date(Date.now() + 90 * 60 * 1000).toISOString(),
     status: 'upcoming',
@@ -202,59 +202,24 @@ export const mockRaces: Race[] = [
   }
 ];
 
-// Track information from specification
+// Goulburn Greyhound Racing Club track information
 export const mockTracks: Track[] = [
   {
-    id: 'towcester',
-    name: "Towcester",
-    location: "Northamptonshire, England",
-    surfaceType: 'sand',
+    id: 'goulburn',
+    name: "Goulburn Greyhound Racing Club",
+    location: "Braidwood Road, Goulburn, NSW 2580, Australia",
+    surfaceType: 'grass',
     distanceOptions: [380, 450, 500, 640],
     capacity: 3500,
-    facilities: ["Restaurant", "Bar", "Betting Facilities", "Private Boxes"],
+    facilities: ["Restaurant", "Bar", "Betting Facilities", "Private Boxes", "TAB", "Function Rooms"],
     weatherCondition: "Clear",
     trackCondition: 'fast',
-    upcomingRaces: mockRaces.filter(r => r.trackName === "Towcester"),
+    upcomingRaces: mockRaces.filter(r => r.trackName === "Goulburn"),
     schedule: [
       { day: "Monday", startTime: "19:30", numberOfRaces: 12 },
       { day: "Wednesday", startTime: "19:30", numberOfRaces: 12 },
       { day: "Friday", startTime: "19:30", numberOfRaces: 14, eventType: "Evening Meeting" },
       { day: "Saturday", startTime: "14:00", numberOfRaces: 16, eventType: "Featured Card" }
-    ]
-  },
-  {
-    id: 'birmingham',
-    name: "Birmingham",
-    location: "Birmingham, England",
-    surfaceType: 'sand',
-    distanceOptions: [280, 380, 480, 660],
-    capacity: 2800,
-    facilities: ["Restaurant", "Bar", "Betting Facilities"],
-    weatherCondition: "Partly Cloudy",
-    trackCondition: 'good',
-    upcomingRaces: mockRaces.filter(r => r.trackName === "Birmingham"),
-    schedule: [
-      { day: "Tuesday", startTime: "14:15", numberOfRaces: 10, eventType: "Afternoon Card" },
-      { day: "Thursday", startTime: "19:15", numberOfRaces: 12 },
-      { day: "Saturday", startTime: "19:15", numberOfRaces: 14 }
-    ]
-  },
-  {
-    id: 'romford',
-    name: "Romford",
-    location: "London, England",
-    surfaceType: 'sand',
-    distanceOptions: [380, 525, 575],
-    capacity: 4200,
-    facilities: ["Restaurant", "Multiple Bars", "Betting Facilities", "Private Boxes", "VIP Lounge"],
-    weatherCondition: "Clear",
-    trackCondition: 'fast',
-    upcomingRaces: mockRaces.filter(r => r.trackName === "Romford"),
-    schedule: [
-      { day: "Monday", startTime: "20:00", numberOfRaces: 12, eventType: "Night Racing" },
-      { day: "Wednesday", startTime: "20:00", numberOfRaces: 12 },
-      { day: "Friday", startTime: "20:00", numberOfRaces: 14, eventType: "Night Racing" },
-      { day: "Saturday", startTime: "20:00", numberOfRaces: 16, eventType: "Featured Night" }
     ]
   }
 ];
@@ -266,13 +231,13 @@ export const mockLiveRaceUpdates = {
   estimatedFinish: 10.5
 };
 
-// Today's schedule summary
+// Today's schedule at Goulburn Greyhound Racing Club
 export const todaysSchedule = [
-  { time: "14:15", track: "Birmingham", race: 1, distance: 480, status: "completed" },
-  { time: "14:30", track: "Birmingham", race: 2, distance: 480, status: "upcoming" },
-  { time: "19:30", track: "Towcester", race: 1, distance: 500, status: "upcoming" },
-  { time: "19:50", track: "Towcester", race: 2, distance: 500, status: "upcoming" },
-  { time: "20:00", track: "Romford", race: 1, distance: 525, status: "upcoming" },
-  { time: "20:10", track: "Towcester", race: 3, distance: 500, status: "upcoming" },
-  { time: "20:20", track: "Romford", race: 2, distance: 525, status: "upcoming" }
+  { time: "14:15", track: "Goulburn", race: 1, distance: 480, status: "completed" },
+  { time: "14:30", track: "Goulburn", race: 2, distance: 480, status: "upcoming" },
+  { time: "19:30", track: "Goulburn", race: 3, distance: 500, status: "upcoming" },
+  { time: "19:50", track: "Goulburn", race: 4, distance: 500, status: "upcoming" },
+  { time: "20:00", track: "Goulburn", race: 5, distance: 525, status: "upcoming" },
+  { time: "20:10", track: "Goulburn", race: 6, distance: 500, status: "upcoming" },
+  { time: "20:20", track: "Goulburn", race: 7, distance: 525, status: "upcoming" }
 ];

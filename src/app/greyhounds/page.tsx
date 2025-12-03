@@ -25,7 +25,7 @@ export default function GreyhoundsPage() {
             Greyhound <span className="text-[hsl(var(--racing-gold))]">Profiles</span>
           </h1>
           <p className="text-lg text-gray-200 max-w-2xl">
-            Explore detailed statistics, racing history, and performance analytics for our featured racing greyhounds.
+            Explore detailed statistics, racing history, and performance analytics for greyhounds racing at Goulburn.
           </p>
         </div>
       </section>
@@ -130,7 +130,7 @@ export default function GreyhoundsPage() {
                     <span className="text-sm font-semibold text-[hsl(var(--foreground))]">Career Earnings</span>
                   </div>
                   <span className="text-lg font-bold text-[hsl(var(--racing-green))]">
-                    £{dog.earnings.toLocaleString()}
+                    ${dog.earnings.toLocaleString()}
                   </span>
                 </div>
 

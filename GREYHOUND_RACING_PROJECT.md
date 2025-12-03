@@ -1,18 +1,18 @@
-# Greyhound Gold - Racing Platform
+# Goulburn Greyhound Racing Club - Official Website
 
 ## Project Overview
 
-A comprehensive greyhound racing website featuring live race information, betting opportunities, detailed greyhound profiles, and track information. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS.
+The official website for Goulburn Greyhound Racing Club featuring live race information, detailed greyhound profiles, track schedule, and club information. Located at Braidwood Road, Goulburn, NSW 2580, Australia. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS.
 
 ## Design System
 
-### Color Palette (Pixel-Perfect from Design Reference)
+### Color Palette (Goulburn Club Brand Colors)
 
-- **Dark Navy**: `#1a2332` (HSL: 216, 31%, 14%) - Headers, footers, primary dark elements
-- **Racing Gold**: `#d4a574` (HSL: 32, 52%, 64%) - Accent color, logos, highlights
-- **Bright Green**: `#6fb33e` (HSL: 96, 50%, 47%) - CTA buttons, success states
-- **Light Gray Background**: `#e8e8e8` (HSL: 0, 0%, 93%)
-- **Muted Gray**: `#6b7280` (HSL: 220, 13%, 46%)
+- **Goulburn Blue (Navy)**: `#003366` (HSL: 210, 100%, 20%) - Headers, footers, primary dark elements
+- **Racing Gold**: `#ffd700` (HSL: 43, 100%, 50%) - Accent color, logos, highlights
+- **Racing Green**: `#28a745` (HSL: 140, 60%, 35%) - CTA buttons, success states
+- **Light Gray Background**: `#f5f5f5` (HSL: 0, 0%, 96%)
+- **Muted Gray**: `#737373` (HSL: 220, 9%, 46%)
 - **White**: `#ffffff` - Cards, primary backgrounds
 
 ### Typography
@@ -93,19 +93,21 @@ A comprehensive greyhound racing website featuring live race information, bettin
 ### Components
 
 #### Navigation (`/components/racing/navigation.tsx`)
-- Dark navy header with white text
-- Greyhound Gold logo with gold accent
-- Navigation links: Races, Dogs, Schedule, Profiles, News, Betting Slip
-- Login/Sign Up buttons
+- Goulburn blue header with white text
+- Goulburn Greyhound Racing Club logo with gold accent
+- Navigation links: Races, Dogs, Schedule, Profiles, News, Contact
+- Login/Join Now buttons
 - Fully responsive with mobile menu
 
 #### Footer (`/components/racing/footer.tsx`)
-- Dark navy background matching header
+- Goulburn blue background matching header
 - Four-column layout:
-  - About Us links
-  - Contact information
-  - Terms & legal links
+  - Goulburn Club information with address
+  - Quick links to races and profiles
+  - Information links
   - Social media & responsible gambling
+- Contact details: (02) 4821 2699, info@goulburngreys.com.au
+- Address: Braidwood Road, Goulburn, NSW 2580
 - Social media icons (Facebook, Twitter, Instagram)
 - Copyright notice
 
@@ -121,9 +123,9 @@ A comprehensive greyhound racing website featuring live race information, bettin
 
 #### Mock Data (`/data/mock-racing-data.ts`)
 - **Featured Greyhounds**: Lightning Bolt Murphy, Midnight Express Sally, Rapid Fire Rex, etc.
-- **Sample Races**: Towcester, Birmingham, Romford races with full participant details
-- **Track Information**: Complete track profiles for Towcester, Birmingham, Romford
-- **Today's Schedule**: Full day's racing schedule across all tracks
+- **Sample Races**: Goulburn races with full participant details
+- **Track Information**: Complete track profile for Goulburn Greyhound Racing Club
+- **Today's Schedule**: Full day's racing schedule at Goulburn
 
 ## Technical Stack
 
@@ -196,11 +198,11 @@ src/
 All colors defined in `globals.css` as HSL values:
 
 ```css
---racing-navy: 216 31% 14%;        /* #1a2332 - Headers/Footer */
---racing-gold: 32 52% 64%;         /* #d4a574 - Accent/Logo */
---racing-green: 96 50% 47%;        /* #6fb33e - CTA Buttons */
---racing-gray-bg: 0 0% 93%;        /* #e8e8e8 - Background */
---racing-muted: 220 13% 46%;       /* #6b7280 - Muted text */
+--racing-navy: 210 100% 20%;       /* #003366 - Goulburn Blue */
+--racing-gold: 43 100% 50%;        /* #ffd700 - Racing Gold */
+--racing-green: 140 60% 35%;       /* #28a745 - Racing Green */
+--racing-gray-bg: 0 0% 96%;        /* #f5f5f5 - Background */
+--racing-muted: 220 9% 46%;        /* #737373 - Muted text */
 ```
 
 ## Future Enhancements
