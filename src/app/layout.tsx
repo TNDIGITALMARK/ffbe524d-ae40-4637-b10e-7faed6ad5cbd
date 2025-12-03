@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elegant Flora Boutique",
-  description: "Beautiful AI-powered website creation platform",
+  title: "Greyhound Gold - Live Racing, Betting & Results",
+  description: "Your premier destination for greyhound racing. Live race updates, betting odds, greyhound profiles, and track information. Join the excitement today!",
 };
 
 export default function RootLayout({
