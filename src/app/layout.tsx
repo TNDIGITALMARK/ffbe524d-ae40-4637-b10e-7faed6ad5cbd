@@ -19,8 +19,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Greyhound Gold - Live Racing, Betting & Results",
-  description: "Your premier destination for greyhound racing. Live race updates, betting odds, greyhound profiles, and track information. Join the excitement today!",
+  title: "Goulburn Greyhound Racing Club - NSW Premier Racing Venue",
+  description: "Experience world-class greyhound racing at Goulburn Greyhound Racing Club. Located on Braidwood Road, Goulburn NSW. Live races, events, and family-friendly entertainment. Join us for thrilling race meets!",
+  keywords: "Goulburn greyhound racing, NSW greyhound racing, Goulburn racing club, greyhound races NSW, Goulburn track, greyhound racing events",
 };
 
 export default function RootLayout({

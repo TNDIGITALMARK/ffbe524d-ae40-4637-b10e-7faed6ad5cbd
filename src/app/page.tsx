@@ -1,6 +1,6 @@
 // ============================================
-// LIVE RACING DASHBOARD - HOME PAGE
-// Pixel-perfect implementation of design reference
+// GOULBURN GREYHOUND RACING CLUB - HOME PAGE
+// Professional racing club dashboard
 // ============================================
 
 import { RacingNavigation } from '@/components/racing/navigation';
@@ -8,7 +8,7 @@ import { RacingFooter } from '@/components/racing/footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { mockRaces, mockGreyhounds, todaysSchedule } from '@/data/mock-racing-data';
-import { Clock, TrendingUp, Trophy } from 'lucide-react';
+import { Clock, TrendingUp, Trophy, MapPin } from 'lucide-react';
 import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
@@ -40,21 +40,37 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
-          <div className="text-white max-w-2xl">
+          <div className="text-white max-w-3xl">
+            <div className="flex items-center gap-2 mb-4">
+              <MapPin className="w-6 h-6 text-[hsl(var(--racing-gold))]" />
+              <span className="text-[hsl(var(--racing-gold))] font-bold text-lg uppercase tracking-wide">
+                Goulburn, NSW
+              </span>
+            </div>
             <h1 className="text-5xl md:text-6xl font-extrabold mb-4 uppercase leading-tight">
-              Unleash the Speed.
+              Goulburn Greyhound
               <br />
-              <span className="text-[hsl(var(--racing-gold))]">Upcoming Races</span>
+              <span className="text-[hsl(var(--racing-gold))]">Racing Club</span>
             </h1>
             <p className="text-lg md:text-xl mb-6 text-gray-200">
-              Next Race: {upcomingRaces[0]?.trackName} • {upcomingRaces[0]?.raceNumber} • {new Date(upcomingRaces[0]?.postTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+              Experience the thrill of greyhound racing at one of NSW's premier racing venues. 
+              Join us for exciting race meets, community events, and world-class entertainment.
             </p>
-            <Button
-              size="lg"
-              className="bg-[hsl(var(--racing-green))] hover:bg-[hsl(var(--racing-green))]/90 text-white font-bold text-base uppercase tracking-wide shadow-button px-8 py-6"
-            >
-              Bet Now
-            </Button>
+            <div className="flex gap-4">
+              <Button
+                size="lg"
+                className="bg-[hsl(var(--racing-green))] hover:bg-[hsl(var(--racing-green))]/90 text-white font-bold text-base uppercase tracking-wide shadow-button px-8 py-6"
+              >
+                View Races
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[hsl(var(--racing-navy))] font-bold text-base uppercase tracking-wide px-8 py-6"
+              >
+                About Us
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -114,7 +130,7 @@ export default function HomePage() {
             <Card className="bg-white shadow-md border-[hsl(var(--border))]">
               <CardHeader className="bg-[hsl(var(--racing-navy))] text-white rounded-t-lg">
                 <CardTitle className="text-sm uppercase tracking-wide font-bold">
-                  Live Race Results
+                  Recent Results
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6">
@@ -143,44 +159,11 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            {/* Betting Odds */}
-            <Card className="bg-white shadow-md border-[hsl(var(--border))]">
-              <CardHeader>
-                <CardTitle className="text-base font-bold text-[hsl(var(--foreground))] uppercase">
-                  Betting Odds
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="border-b border-[hsl(var(--border))]">
-                        <th className="text-left py-2 font-bold text-[hsl(var(--foreground))] uppercase text-xs">Greyhound</th>
-                        <th className="text-center py-2 font-bold text-[hsl(var(--foreground))] uppercase text-xs">Odds</th>
-                        <th className="text-center py-2 font-bold text-[hsl(var(--foreground))] uppercase text-xs">Track</th>
-                        <th className="text-right py-2 font-bold text-[hsl(var(--foreground))] uppercase text-xs">Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {upcomingRaces[0]?.participants.slice(0, 3).map((p) => (
-                        <tr key={p.trapNumber} className="border-b border-[hsl(var(--border))] last:border-0">
-                          <td className="py-3 text-[hsl(var(--foreground))]">{p.greyhoundName}</td>
-                          <td className="py-3 text-center text-[hsl(var(--racing-gold))] font-bold">{p.odds}</td>
-                          <td className="py-3 text-center text-[hsl(var(--foreground))]">{upcomingRaces[0]?.trackName}</td>
-                          <td className="py-3 text-right text-[hsl(var(--racing-green))] font-semibold">{upcomingRaces[0]?.status}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </CardContent>
-            </Card>
-
             {/* Today's Schedule */}
             <Card className="bg-white shadow-md border-[hsl(var(--border))]">
               <CardHeader>
                 <CardTitle className="text-base font-bold text-[hsl(var(--foreground))] uppercase">
-                  Today's Schedule
+                  Today's Schedule at Goulburn
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -207,21 +190,53 @@ export default function HomePage() {
             </Card>
           </div>
 
-          {/* Right Column - Featured Greyhound Profiles */}
+          {/* Right Column - Club Info & Featured Greyhounds */}
           <div className="space-y-6">
+            {/* Club Information Card */}
             <Card className="bg-[hsl(var(--racing-navy))] text-white shadow-md">
               <CardHeader>
                 <CardTitle className="text-sm uppercase tracking-wide font-bold flex items-center gap-2">
-                  <Trophy className="w-4 h-4 text-[hsl(var(--racing-gold))]" />
-                  Featured Greyhound Profiles
+                  <MapPin className="w-4 h-4 text-[hsl(var(--racing-gold))]" />
+                  Goulburn Racing Club
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-[hsl(var(--racing-gold))] mb-2">Location</h4>
+                  <p className="text-sm text-gray-200">
+                    Braidwood Road<br />
+                    Goulburn, NSW 2580
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-[hsl(var(--racing-gold))] mb-2">Contact</h4>
+                  <p className="text-sm text-gray-200">
+                    Phone: (02) 4821 2699<br />
+                    Email: info@goulburngreys.com.au
+                  </p>
+                </div>
+                <Button
+                  size="sm"
+                  className="w-full bg-[hsl(var(--racing-green))] hover:bg-[hsl(var(--racing-green))]/90 text-white font-bold text-xs uppercase"
+                >
+                  Get Directions
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Featured Greyhound Profiles */}
+            <Card className="bg-white shadow-md border-[hsl(var(--border))]">
+              <CardHeader className="bg-[hsl(var(--racing-navy))] text-white rounded-t-lg">
+                <CardTitle className="text-sm uppercase tracking-wide font-bold flex items-center gap-2">
+                  <Trophy className="w-4 h-4 text-[hsl(var(--racing-gold))]" />
+                  Featured Greyhounds
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 pt-4">
                 {featuredGreyhounds.map((dog) => (
-                  <div key={dog.id} className="bg-white rounded-lg p-4 shadow-sm">
-                    {/* Placeholder for greyhound image */}
-                    <div className="w-full h-32 bg-gradient-to-br from-[hsl(var(--racing-gold))]/20 to-[hsl(var(--racing-navy))]/20 rounded-lg mb-3 flex items-center justify-center">
-                      <Trophy className="w-12 h-12 text-[hsl(var(--racing-gold))]" />
+                  <div key={dog.id} className="border-b border-[hsl(var(--border))] pb-4 last:border-0">
+                    <div className="w-full h-24 bg-gradient-to-br from-[hsl(var(--racing-gold))]/20 to-[hsl(var(--racing-navy))]/20 rounded-lg mb-3 flex items-center justify-center">
+                      <Trophy className="w-10 h-10 text-[hsl(var(--racing-gold))]" />
                     </div>
                     <h4 className="font-bold text-[hsl(var(--foreground))] mb-1">{dog.name}</h4>
                     <p className="text-xs text-[hsl(var(--muted-foreground))] mb-2">
